@@ -1,0 +1,355 @@
+<!doctype html>
+
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>zarifa  — myportfolio</title>
+  <meta name="description" content="Sənin adın — layihələr və əlaqə" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef6;background:linear-gradient(180deg,#071026 0%, #071827 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:980px;margin:40px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:#02151a;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:36px}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    h1{margin:0 0 8px;font-size:28px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:var(--glass);padding:6px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+    .avatar{width:160px;height:160px;border-radius:20px;background:linear-gradient(180deg,#112233,#0b1726);display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .project h3{margin:0 0 6px}
+    .tags{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;background:var(--glass);padding:6px 8px;border-radius:8px;color:var(--muted)}
+    footer{margin-top:38px;color:var(--muted);text-align:center;font-size:14px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#02151a;font-weight:700;text-decoration:none}
+    /* responsive */
+    @media (max-width:820px){.hero{grid-template-columns:1fr;}.projects{grid-template-columns:1fr}}
+    .logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+  
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">
+  <img src="image/zarifa.jpg" alt="Logo şəkli">
+</div>
+
+        <div>
+          <div style="font-weight:700">Zarifa Mammadova</div>
+          <div style="font-size:13px;color:var(--muted)">Data Analyst/Data Science Learner</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Layihələrim</a>
+        <a href="#about">Haqqımda</a>
+        <a href="#contact" class="btn">Əlaqə</a>
+      </nav>
+    </header><section class="hero">
+  <div class="card">
+    <h1>Salam,Xoş Gəlmişsiniz🌟</h1>
+    <p class="lead">Mən Zərifə Data Analitikəm və aşağıda seçilmiş layihələrimi görə bilərsiniz.</p>
+    <div style="margin-top:12px">
+      <strong>Xüsusi bacarıqlar</strong>
+      <div class="skills" style="margin-top:10px">
+        <div class="skill">Excel</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Tableau</div>
+        <div class="skill">Python</div>
+      </div>
+    </div>
+
+    <div id="projects" style="margin-top:20px">
+      <strong>Layihələr</strong>
+      <div class="projects">
+        <article class="project">
+          <article class="project">
+  <h3>Medical Insurance Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px">
+    Tibbi sığorta xərclərini demoqrafik və həyat tərzi faktorları üzrə analiz edən Power BI layihəsi.
+  </p>
+  <div class="tags">
+    <span class="tag">Power BI</span>
+    <span class="tag">Data Analysis</span>
+  </div>
+  <div style="margin-top:12px;text-align:center">
+    <img src="image/tibbi_sigorta.png" alt="Medical Insurance Dashboard" style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)" />
+  </div>
+  <div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 Tam versiya
+  </a>
+</div>
+</article>
+
+        </article>
+        <article class="project">
+<article class="project">
+  <h3>Delivery & Customer Insights Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px">
+    Power BI layihəsi restoran sifarişləri, müştəri davranışı və sürücü performansını interaktiv şəkildə analiz edir.
+  </p>
+  <div class="tags">
+    <span class="tag">Power BI</span>
+    <span class="tag">Data Analysis</span>
+  </div>
+<div class="project-screenshots" 
+     style="position:relative;width:100%;max-width:500px;margin:12px auto;cursor:pointer;">
+  <!-- Ön plan şəkil -->
+  <img src="image/Delivery.png" alt="Screenshot 1" 
+       style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);position:relative;z-index:2;transition:all 0.3s ease;">
+  
+  <!-- Arxa plan şəkil -->
+  <img src="image/delivery2.png" alt="Screenshot 2" 
+       style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+              position:absolute;top:0;left:0;opacity:0.5;z-index:1;transition:all 0.3s ease;">
+</div>
+<div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 Tam versiya
+  </a>
+</div>
+
+
+
+
+
+</article>
+
+
+        </article>
+        <article class="project">
+  <h3>Human Resources Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px">
+    İşçilərin demoqrafik məlumatları, performansı və maaş paylanmasını analiz edən Tableau layihəsi.
+  </p>
+  <div class="tags">
+    <span class="tag">Tableau</span>
+    <span class="tag">Data Analysis</span>
+  </div>
+
+  <!-- İki screenshot -->
+  <div class="project-screenshots" style="position:relative;width:100%;max-width:500px;margin:12px auto;">
+    <img src="image/Humanrescources1.png" alt="HR Dashboard 1" 
+         style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);position:relative;z-index:2;">
+    <img src="image/Humanresources2.png" alt="HR Dashboard 2" 
+         style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
+                position:absolute;top:30px;left:0;opacity:0.5;z-index:1;">
+  </div>
+ <div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 Tam versiya
+  </a>
+</div>
+
+</article>
+
+</article>
+        <article class="project">
+  <h3>E-Commerce Sales Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px">
+    Power BI ilə hazırlanmış interaktiv E-Commerce satış dashboardu. Satış trendləri, müştəri davranışı, məhsul performansı və coğrafi paylanma analizini göstərir.
+  </p>
+  <div class="tags">
+    <span class="tag">Power BI</span>
+    <span class="tag">Data Analysis</span>
+  </div>
+
+  <!-- Screenshot -->
+  <div style="margin-top:12px;text-align:center">
+    <img src="image/E-commerce.png" alt="E-Commerce Sales Dashboard" 
+         style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);" />
+  </div>
+  <div style="margin-top:20px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 Tam versiya
+  </a>
+</div>
+
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <aside class="profile card">
+   <div class="avatar">
+  <img src="image/Zarifa MAmmadova.png" alt="Zarifa" />
+</div>
+
+   <h3>Təhsil</h3>
+  <div style="font-size:14px; color:var(--muted); margin-top:-15px;">
+    <p><strong>Universitet:</strong> Azərbaycan Dövlət İqtisad Universiteti </p>
+    <p><strong>İxtisas:</strong> Statistika</p>
+    <p><strong>İl:</strong> 2018 – 2022</p>
+  </div>
+   <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+  <a href="https://www.linkedin.com/in/zerife-memmedova/" target="_blank" 
+     style="color:var(--muted);text-decoration:none;margin-right:8px;">LinkedIn</a>
+
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank" 
+     style="color:var(--muted);text-decoration:none;margin-right:8px;">GitHub</a>
+
+</div>
+
+  </aside>
+</section>
+
+<section id="about" style="margin-top:22px">
+  <div class="card">
+    <h2>Haqqımda</h2>
+    <p class="lead">Mən Statistikadan bakalavr dərəcəsinə sahibəm və hazırda Data Analitika sahəsində bilik və bacarıqlarımı inkişaf etdirirəm. Excel, SQL, Power BI və Tableau proqramlarından sərbəst istifadə edə bilirəm. Bundan əlavə, İngilis, İspan və Fransız dillərində ünsiyyət qura bilirəm.
+.</p>
+<br><br>
+     <a href="image/CVZarifaMammadova.pdf" download
+   style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px;
+          background:#fff; color:#000; font-weight:500; border-radius:8px;
+          text-decoration:none; border:1px solid #ccc; font-size:14px;">
+  CV yüklə
+</a>
+
+      </a>
+    </p>
+  </div>
+</section>
+  </div>
+</section>
+
+<section id="contact" style="margin-top:22px">
+  <div class="card">
+    <h2>Əlaqə</h2>
+   <p class="lead" style="display:flex;align-items:center;gap:6px;">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       width="18" height="18" fill="currentColor" 
+       viewBox="0 0 16 16" style="flex-shrink:0;">
+    <path d="M0 4a2 2 0 0 1 2-2h12a2 
+             2 0 0 1 2 2v8a2 2 0 0 1-2 
+             2H2a2 2 0 0 1-2-2V4zm2-1a1 
+             1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 
+             1 0 0 0-1-1H2zm13 2.383-4.708 
+             2.825L15 11.105V5.383zM14.247 
+             12 9.042 8.708 8 9.354l-1.042-.646L1.753 
+             12H14.247zM1 11.105l4.708-2.897L1 
+             5.383v5.722z"/>
+  </svg>
+  <a href="mailto:zerife.memmedova@yahoo.com">zerife.memmedova@yahoo.com</a>
+</p>
+
+    <form onsubmit="event.preventDefault(); alert('Form demo: e-poçt göndərmə burada qurulmalıdır');" style="margin-top:12px">
+      <div style="display:flex;gap:8px;flex-direction:column">
+        <input placeholder="Ad" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        <input placeholder="E-poçt" required type="email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        <textarea placeholder="Mesaj" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+        <button class="btn" type="submit">Göndər</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Hazırlayan: Zarifa Mammadova. All Rights Reserved
+</footer>
+
+  </div>  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script>
+  const container = document.querySelector('.project-screenshots');
+  const topImg = container.querySelector('img:first-child');
+  const bottomImg = container.querySelector('img:last-child');
+
+  container.addEventListener('mouseenter', () => {
+    bottomImg.style.top = '0';
+    bottomImg.style.opacity = '1';
+    bottomImg.style.zIndex = '3';
+    topImg.style.zIndex = '2';
+  });
+
+  container.addEventListener('mouseleave', () => {
+    bottomImg.style.top = '30px';  // əvvəlki vəziyyət
+    bottomImg.style.opacity = '0.8';
+    bottomImg.style.zIndex = '1';
+    topImg.style.zIndex = '2';
+  });
+</script>
+<script>
+document.querySelectorAll('.project-screenshots').forEach(container => {
+  const topImg = container.querySelector('img:first-child');
+  const bottomImg = container.querySelector('img:last-child');
+
+  container.addEventListener('mouseenter', () => {
+    bottomImg.style.top = '0';
+    bottomImg.style.opacity = '1';
+    bottomImg.style.zIndex = '3';
+    topImg.style.zIndex = '2';
+  });
+
+  container.addEventListener('mouseleave', () => {
+    bottomImg.style.top = '30px';
+    bottomImg.style.opacity = '0.5';
+    bottomImg.style.zIndex = '1';
+    topImg.style.zIndex = '2';
+  });
+});
+</script>
+</body>
+</html>
