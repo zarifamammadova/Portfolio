@@ -294,14 +294,7 @@
   <a href="mailto:zerife.memmedova@yahoo.com">zerife.memmedova@yahoo.com</a>
 </p>
 
-    <form onsubmit="event.preventDefault(); alert('Form demo: e-poçt göndərmə burada qurulmalıdır');" style="margin-top:12px">
-      <div style="display:flex;gap:8px;flex-direction:column">
-        <input placeholder="Ad" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-        <input placeholder="E-poçt" required type="email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-        <textarea placeholder="Mesaj" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
-        <button class="btn" type="submit">Göndər</button>
-      </div>
-    </form>
+    
   </div>
 </section>
 
@@ -309,47 +302,38 @@
   © <span id="year"></span> Hazırlayan: Zarifa Mammadova. All Rights Reserved
 </footer>
 
-  </div>  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script>
-  const container = document.querySelector('.project-screenshots');
-  const topImg = container.querySelector('img:first-child');
-  const bottomImg = container.querySelector('img:last-child');
-
-  container.addEventListener('mouseenter', () => {
-    bottomImg.style.top = '0';
-    bottomImg.style.opacity = '1';
-    bottomImg.style.zIndex = '3';
-    topImg.style.zIndex = '2';
-  });
-
-  container.addEventListener('mouseleave', () => {
-    bottomImg.style.top = '30px';  // əvvəlki vəziyyət
-    bottomImg.style.opacity = '0.8';
-    bottomImg.style.zIndex = '1';
-    topImg.style.zIndex = '2';
-  });
-</script>
-<script>
+  </div> <script>
 document.querySelectorAll('.project-screenshots').forEach(container => {
   const topImg = container.querySelector('img:first-child');
   const bottomImg = container.querySelector('img:last-child');
+  
+  // Başlanğıc vəziyyət
+  topImg.style.zIndex = '2';
+  bottomImg.style.zIndex = '1';
+  bottomImg.style.top = '30px';
+  bottomImg.style.opacity = '0.5';
 
-  container.addEventListener('mouseenter', () => {
-    bottomImg.style.top = '0';
-    bottomImg.style.opacity = '1';
-    bottomImg.style.zIndex = '3';
-    topImg.style.zIndex = '2';
-  });
+  let showTop = true;
 
-  container.addEventListener('mouseleave', () => {
-    bottomImg.style.top = '30px';
-    bottomImg.style.opacity = '0.5';
-    bottomImg.style.zIndex = '1';
-    topImg.style.zIndex = '2';
-  });
+  setInterval(() => {
+    if(showTop){
+      topImg.style.zIndex = '1';
+      bottomImg.style.zIndex = '2';
+      bottomImg.style.top = '0';
+      bottomImg.style.opacity = '1';
+
+      topImg.style.top = '30px';
+      topImg.style.opacity = '0.5';
+    } else {
+      topImg.style.zIndex = '2';
+      bottomImg.style.zIndex = '1';
+      topImg.style.top = '0';
+      topImg.style.opacity = '1';
+
+      bottomImg.style.top = '30px';
+      bottomImg.style.opacity = '0.5';
+    }
+    showTop = !showTop;
+  }, 2000); // hər 2 saniyədən bir dəyişir
 });
 </script>
-</body>
-</html>
