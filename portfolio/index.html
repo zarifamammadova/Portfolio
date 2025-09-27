@@ -7,16 +7,40 @@
   <title>zarifa  — myportfolio</title>
   <meta name="description" content="Sənin adın — layihələr və əlaqə" />
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#06b6d4;--glass: rgba(255,255,255,0.04)}
+    /* Dark theme (default) */
+    :root {
+      --bg-primary: #071026;
+      --bg-secondary: #071827;
+      --text-primary: #e6eef6;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #06b6d4;
+      --glass: rgba(255,255,255,0.04);
+      --shadow: rgba(2,6,23,0.6);
+      --project-bg: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    }
+
+    /* Light theme */
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #e2e8f0;
+      --text-primary: #1a202c;
+      --card: #ffffff;
+      --muted: #64748b;
+      --accent: #06b6d4;
+      --glass: rgba(0,0,0,0.04);
+      --shadow: rgba(0,0,0,0.1);
+      --project-bg: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#e6eef6;background:linear-gradient(180deg,#071026 0%, #071827 100%);-webkit-font-smoothing:antialiased}
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:var(--text-primary);background:linear-gradient(180deg,var(--bg-primary) 0%, var(--bg-secondary) 100%);-webkit-font-smoothing:antialiased;transition:background 0.3s ease, color 0.3s ease}
     .container{max-width:980px;margin:40px auto;padding:28px}
     header{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
     .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:#02151a;font-weight:700}
     nav a{color:var(--muted);text-decoration:none;margin-left:16px}
     .hero{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:36px}
-    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px var(--shadow);transition:background 0.3s ease, box-shadow 0.3s ease;}
     h1{margin:0 0 8px;font-size:28px}
     p.lead{color:var(--muted);margin:0 0 16px}
     .skills{display:flex;flex-wrap:wrap;gap:8px}
@@ -24,7 +48,7 @@
     .profile{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
     .avatar{width:160px;height:160px;border-radius:20px;background:linear-gradient(180deg,#112233,#0b1726);display:flex;align-items:center;justify-content:center;font-size:36px;color:#fff}
     .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px}
-    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);}
+    .project{padding:14px;border-radius:12px;background:var(--project-bg);transition:background 0.3s ease;}
     .project h3{margin:0 0 6px}
     .tags{display:flex;gap:8px;flex-wrap:wrap}
     .tag{font-size:12px;background:var(--glass);padding:6px 8px;border-radius:8px;color:var(--muted)}
@@ -142,11 +166,85 @@ nav a:active {
   color: #02151a;
 }
 
+/* Theme toggle button styles - positioned in top right corner */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px;
+  border-radius: 50%;
+  border: none;
+  background: var(--card);
+  color: var(--text-primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px var(--shadow);
+  z-index: 1000;
+  border: 2px solid var(--glass);
+}
+
+.theme-toggle:hover {
+  background: var(--accent);
+  color: #02151a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* Responsive adjustment for theme toggle */
+@media (max-width: 820px) {
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 820px) {
+  nav {
+    flex-direction: column; /* elementləri üst-üstə deyil, sütun şəklində düz */
+    align-items: flex-start; /* soldan başlayır */
+    gap: 12px; /* linklər və düymələr arasında məsafə */
+  }
+
+  .nav-controls {
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%; /* lazım olarsa */
+  }
+
+  nav a {
+    margin-left: 0; /* soldan margin sıfırlanır */
+  }
+}
+
+
   
   </style>
 </head>
 
 <body>
+  <!-- Theme toggle button in top right corner -->
+  <button class="theme-toggle" id="theme-toggle" title="Toggle theme">🌙</button>
+  
   <div class="container">
     <header>
       <div class="brand">
@@ -163,8 +261,10 @@ nav a:active {
         <a href="#projects" id="nav-projects">Layihələrim</a>
         <a href="#about" id="nav-about">Haqqımda</a>
         <a href="#contact" id="nav-contact">Əlaqə</a>
-        <button class="lang active" id="btn-az">AZ</button>
-    <button class="lang" id="btn-en">EN</button>
+        <div class="nav-controls">
+          <button class="lang active" id="btn-az">AZ</button>
+          <button class="lang" id="btn-en">EN</button>
+        </div>
       </nav>
     </header><section class="hero">
   <div class="card">
@@ -468,6 +568,47 @@ function switchLanguage(lang) {
 // Add event listeners to language buttons
 document.getElementById('btn-az').addEventListener('click', () => switchLanguage('az'));
 document.getElementById('btn-en').addEventListener('click', () => switchLanguage('en'));
+
+// Theme switching functionality
+let currentTheme = 'dark'; // default theme
+
+// Get theme from localStorage or default to dark
+function getStoredTheme() {
+  const stored = localStorage.getItem('theme');
+  return stored || 'dark';
+}
+
+// Apply theme to document
+function applyTheme(theme) {
+  currentTheme = theme;
+  const themeToggle = document.getElementById('theme-toggle');
+  
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggle.textContent = '☀️'; // sun icon for light mode
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggle.textContent = '🌙'; // moon icon for dark mode
+  }
+  
+  // Save to localStorage
+  localStorage.setItem('theme', theme);
+}
+
+// Toggle theme function
+function toggleTheme() {
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+}
+
+// Initialize theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const storedTheme = getStoredTheme();
+  applyTheme(storedTheme);
+});
+
+// Add event listener to theme toggle button
+document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
 
 // Project screenshots animation
 document.querySelectorAll('.project-screenshots').forEach(container => {
