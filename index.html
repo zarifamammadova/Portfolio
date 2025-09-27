@@ -38,6 +38,7 @@
     border-radius: 12px;
     overflow: hidden;
   }
+  
 
   .logo img {
     width: 100%;
@@ -45,7 +46,14 @@
     object-fit: cover;
     display: block;
   }
-
+nav .btn {
+  background: none !important;   /* gradienti silir */
+  color: var(--muted) !important;/* rəngi digərləri ilə eyni edir */
+  padding: 0 !important;         /* düymə ölçüsünü sıfırlayır */
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  font-weight: normal !important;
+}
   .avatar {
     width: 160px;
     height: 160px;
@@ -72,6 +80,67 @@
   object-fit: cover;
   display: block;
 }
+/* bütün nav linklər eyni olsun */
+/* bütün nav linklər eyni olsun */
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 700;              /* həmişə qalın olsun */
+  transition: background 0.3s, color 0.3s;
+}
+
+/* hover və click (active) zamanı gradient background */
+nav a:hover,
+nav a:focus,
+nav a:active {
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+  color: #02151a;
+}
+
+/* profil kartını kiçiltmək üçün */
+.profile.card {
+  max-width: 240px;   /* kartın enini məhdudlaşdırır */
+  padding: 16px;      /* iç boşluğunu azaldır */
+  margin: 0 auto;     /* ortada saxlamaq üçün */
+}
+
+/* avatarı kiçiltmək üçün */
+.profile .avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+}
+.lang-switch {
+  display: flex;
+  gap: 6px;
+  margin-left: 16px;
+}
+
+.lang {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* hover effekti — nav linklər kimi */
+.lang:hover {
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+  color: #02151a;
+}
+
+/* aktiv seçilmiş dil üçün sabit gradient */
+.lang.active {
+  background: linear-gradient(90deg, var(--accent), #7c3aed);
+  color: #02151a;
+}
 
   
   </style>
@@ -87,20 +156,22 @@
 
         <div>
           <div style="font-weight:700">Zarifa Mammadova</div>
-          <div style="font-size:13px;color:var(--muted)">Data Analyst/Data Science Learner</div>
+          <div style="font-size:13px;color:var(--muted)" id="job-title">Data Analyst/Data Science Learner</div>
         </div>
       </div>
       <nav>
-        <a href="#projects">Layihələr</a>
-        <a href="#about">Haqqında</a>
-        <a href="#contact" class="btn">Əlaqə</a>
+        <a href="#projects" id="nav-projects">Layihələrim</a>
+        <a href="#about" id="nav-about">Haqqımda</a>
+        <a href="#contact" id="nav-contact">Əlaqə</a>
+        <button class="lang active" id="btn-az">AZ</button>
+    <button class="lang" id="btn-en">EN</button>
       </nav>
     </header><section class="hero">
   <div class="card">
-    <h1>Salam—Xoş Gəlmişsiniz🌟</h1>
-    <p class="lead">Mən Zərifə Data Analitikəm və aşağıda seçilmiş layihələrimi görə bilərsiniz.</p>
+    <h1 id="main-greeting">Salam,Xoş Gəlmişsiniz🌟</h1>
+    <p class="lead" id="main-description">Mən Zərifə Data Analitikəm və aşağıda seçilmiş layihələrimi görə bilərsiniz.</p>
     <div style="margin-top:12px">
-      <strong>Xüsusi bacarıqlar</strong>
+      <strong id="skills-title">Xüsusi bacarıqlar</strong>
       <div class="skills" style="margin-top:10px">
         <div class="skill">Excel</div>
         <div class="skill">SQL</div>
@@ -111,12 +182,12 @@
     </div>
 
     <div id="projects" style="margin-top:20px">
-      <strong>Layihələr</strong>
+      <strong id="projects-title">Layihələr</strong>
       <div class="projects">
         <article class="project">
           <article class="project">
-  <h3>Medical Insurance Dashboard</h3>
-  <p class="lead" style="margin-bottom:8px">
+  <h3 id="project1-title">Medical Insurance Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px" id="project1-desc">
     Tibbi sığorta xərclərini demoqrafik və həyat tərzi faktorları üzrə analiz edən Power BI layihəsi.
   </p>
   <div class="tags">
@@ -126,13 +197,20 @@
   <div style="margin-top:12px;text-align:center">
     <img src="image/tibbi_sigorta.png" alt="Medical Insurance Dashboard" style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)" />
   </div>
+  <div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 <span id="full-version-link1">Tam versiya</span>
+  </a>
+</div>
 </article>
 
         </article>
         <article class="project">
 <article class="project">
-  <h3>Delivery & Customer Insights Dashboard</h3>
-  <p class="lead" style="margin-bottom:8px">
+  <h3 id="project2-title">Delivery & Customer Insights Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px" id="project2-desc">
     Power BI layihəsi restoran sifarişləri, müştəri davranışı və sürücü performansını interaktiv şəkildə analiz edir.
   </p>
   <div class="tags">
@@ -150,18 +228,21 @@
        style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
               position:absolute;top:0;left:0;opacity:0.5;z-index:1;transition:all 0.3s ease;">
 </div>
-
-
-
-
+<div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 <span id="full-version-link2">Tam versiya</span>
+  </a>
+</div>
 
 </article>
 
 
         </article>
         <article class="project">
-  <h3>Human Resources Dashboard</h3>
-  <p class="lead" style="margin-bottom:8px">
+  <h3 id="project3-title">Human Resources Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px" id="project3-desc">
     İşçilərin demoqrafik məlumatları, performansı və maaş paylanmasını analiz edən Tableau layihəsi.
   </p>
   <div class="tags">
@@ -177,10 +258,20 @@
          style="width:100%;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);
                 position:absolute;top:30px;left:0;opacity:0.5;z-index:1;">
   </div>
+ <div style="margin-top:32px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 <span id="full-version-link3">Tam versiya</span>
+  </a>
+</div>
+
+</article>
+
 </article>
         <article class="project">
-  <h3>E-Commerce Sales Dashboard</h3>
-  <p class="lead" style="margin-bottom:8px">
+  <h3 id="project4-title">E-Commerce Sales Dashboard</h3>
+  <p class="lead" style="margin-bottom:8px" id="project4-desc">
     Power BI ilə hazırlanmış interaktiv E-Commerce satış dashboardu. Satış trendləri, müştəri davranışı, məhsul performansı və coğrafi paylanma analizini göstərir.
   </p>
   <div class="tags">
@@ -193,6 +284,14 @@
     <img src="image/E-commerce.png" alt="E-Commerce Sales Dashboard" 
          style="width:100%;max-width:500px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);" />
   </div>
+  <div style="margin-top:20px;text-align:center;">
+  <a href="https://github.com/zarifamammadova/myportfolio" target="_blank"
+     style="padding:4px 10px; font-size:12px; border-radius:6px; background:#000; color:#fff;
+            text-decoration:none; font-weight:500; display:inline-flex; align-items:center; gap:4px;">
+    🔗 <span id="full-version-link4">Tam versiya</span>
+  </a>
+</div>
+
         </article>
       </div>
     </div>
@@ -203,8 +302,12 @@
   <img src="image/Zarifa MAmmadova.png" alt="Zarifa" />
 </div>
 
-    <h3>Əlaqə vasitələri </h3>
-    <a href="zerife.memmedova@yahoo.com" class="btn">E-poçt yaz</a>
+   <h3 id="education-title">Təhsil</h3>
+  <div style="font-size:14px; color:var(--muted); margin-top:-15px;">
+    <p><strong id="university-label">Universitet:</strong> <span id="university-name">Azərbaycan Dövlət İqtisad Universiteti</span> </p>
+    <p><strong id="major-label">İxtisas:</strong> <span id="major-name">Statistika</span></p>
+    <p><strong id="year-label">İl:</strong> <span id="year-range">2018 – 2022</span></p>
+  </div>
    <div style="margin-top:12px;font-size:13px;color:var(--muted)">
   <a href="https://www.linkedin.com/in/zerife-memmedova/" target="_blank" 
      style="color:var(--muted);text-decoration:none;margin-right:8px;">LinkedIn</a>
@@ -219,79 +322,188 @@
 
 <section id="about" style="margin-top:22px">
   <div class="card">
-    <h2>Haqqında</h2>
-    <p class="lead">Mən Statistikadan bakalavr dərəcəsinə sahibəm və hazırda Data Analitika sahəsində bilik və bacarıqlarımı inkişaf etdirirəm. Excel, SQL, Power BI və Tableau proqramlarından sərbəst istifadə edə bilirəm. Bundan əlavə, İngilis, İspan və Fransız dillərində ünsiyyət qura bilirəm.
+    <h2 id="about-title">Haqqımda</h2>
+    <p class="lead" id="about-description">Mən Statistikadan bakalavr dərəcəsinə sahibəm və hazırda Data Analitika sahəsində bilik və bacarıqlarımı inkişaf etdirirəm. Excel, SQL, Power BI və Tableau proqramlarından sərbəst istifadə edə bilirəm. Bundan əlavə, İngilis, İspan və Fransız dillərində ünsiyyət qura bilirəm.
 .</p>
 <br><br>
-      📄 <a href="image/CVZarifaMammadova.pdf" target="_blank" style="color:var(--accent);text-decoration:underline;">
-        CV-mi yüklə 
-      </a>
-    </p>
-  </div>
-</section>
+     <a href="image/CVZarifaMammadova.pdf" download
+   style="display:inline-flex; align-items:center; gap:6px; padding:8px 14px;
+          background:#fff; color:#000; font-weight:500; border-radius:8px;
+          text-decoration:none; border:1px solid #ccc; font-size:14px;">
+  <span id="cv-download">CV yüklə</span>
+</a>
+
   </div>
 </section>
 
 <section id="contact" style="margin-top:22px">
   <div class="card">
-    <h2>Əlaqə</h2>
-    <p class="lead">Layihələr və əməkdaşlıq üçün yaz: <a href="mailto:sen@misal.com">zerife.memmedova@yahoo.com</a></p>
-    <form onsubmit="event.preventDefault(); alert('Form demo: e-poçt göndərmə burada qurulmalıdır');" style="margin-top:12px">
-      <div style="display:flex;gap:8px;flex-direction:column">
-        <input placeholder="Ad=" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-        <input placeholder="E-poçt" required type="email" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
-        <textarea placeholder="Mesaj" rows="4" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
-        <button class="btn" type="submit">Göndər</button>
-      </div>
-    </form>
+    <h2 id="contact-title">Əlaqə</h2>
+   <p class="lead" style="display:flex;align-items:center;gap:6px;">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       width="18" height="18" fill="currentColor" 
+       viewBox="0 0 16 16" style="flex-shrink:0;">
+    <path d="M0 4a2 2 0 0 1 2-2h12a2 
+             2 0 0 1 2 2v8a2 2 0 0 1-2 
+             2H2a2 2 0 0 1-2-2V4zm2-1a1 
+             1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 
+             1 0 0 0-1-1H2zm13 2.383-4.708 
+             2.825L15 11.105V5.383zM14.247 
+             12 9.042 8.708 8 9.354l-1.042-.646L1.753 
+             12H14.247zM1 11.105l4.708-2.897L1 
+             5.383v5.722z"/>
+  </svg>
+  <a href="mailto:zerife.memmedova@yahoo.com">zerife.memmedova@yahoo.com</a>
+</p>
+
+    
   </div>
 </section>
 
 <footer>
-  © <span id="year"></span> My Portfolio. Hazırlayan: Zarifa Mammadova
+  © <span id="year"></span> <span id="footer-text">Hazırlayan: Zarifa Mammadova. All Rights Reserved</span>
 </footer>
 
-  </div>  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script>
-  const container = document.querySelector('.project-screenshots');
-  const topImg = container.querySelector('img:first-child');
-  const bottomImg = container.querySelector('img:last-child');
+  </div> 
 
-  container.addEventListener('mouseenter', () => {
-    bottomImg.style.top = '0';
-    bottomImg.style.opacity = '1';
-    bottomImg.style.zIndex = '3';
-    topImg.style.zIndex = '2';
-  });
-
-  container.addEventListener('mouseleave', () => {
-    bottomImg.style.top = '30px';  // əvvəlki vəziyyət
-    bottomImg.style.opacity = '0.8';
-    bottomImg.style.zIndex = '1';
-    topImg.style.zIndex = '2';
-  });
-</script>
 <script>
+// Set current year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Translation object
+const translations = {
+  az: {
+    'job-title': 'Data Analyst/Data Science Learner',
+    'nav-projects': 'Layihələrim',
+    'nav-about': 'Haqqımda',
+    'nav-contact': 'Əlaqə',
+    'main-greeting': 'Salam,Xoş Gəlmişsiniz🌟',
+    'main-description': 'Mən Zərifə Data Analitikəm və aşağıda seçilmiş layihələrimi görə bilərsiniz.',
+    'skills-title': 'Xüsusi bacarıqlar',
+    'projects-title': 'Layihələr',
+    'project1-title': 'Medical Insurance Dashboard',
+    'project1-desc': 'Tibbi sığorta xərclərini demoqrafik və həyat tərzi faktorları üzrə analiz edən Power BI layihəsi.',
+    'project2-title': 'Delivery & Customer Insights Dashboard',
+    'project2-desc': 'Power BI layihəsi restoran sifarişləri, müştəri davranışı və sürücü performansını interaktiv şəkildə analiz edir.',
+    'project3-title': 'Human Resources Dashboard',
+    'project3-desc': 'İşçilərin demoqrafik məlumatları, performansı və maaş paylanmasını analiz edən Tableau layihəsi.',
+    'project4-title': 'E-Commerce Sales Dashboard',
+    'project4-desc': 'Power BI ilə hazırlanmış interaktiv E-Commerce satış dashboardu. Satış trendləri, müştəri davranışı, məhsul performansı və coğrafi paylanma analizini göstərir.',
+    'full-version-link1': 'Tam versiya',
+    'full-version-link2': 'Tam versiya',
+    'full-version-link3': 'Tam versiya',
+    'full-version-link4': 'Tam versiya',
+    'education-title': 'Təhsil',
+    'university-label': 'Universitet:',
+    'university-name': 'Azərbaycan Dövlət İqtisad Universiteti',
+    'major-label': 'İxtisas:',
+    'major-name': 'Statistika',
+    'year-label': 'İl:',
+    'year-range': '2018 – 2022',
+    'about-title': 'Haqqımda',
+    'about-description': 'Mən Statistikadan bakalavr dərəcəsinə sahibəm və hazırda Data Analitika sahəsində bilik və bacarıqlarımı inkişaf etdirirəm. Excel, SQL, Power BI və Tableau proqramlarından sərbəst istifadə edə bilirəm. Bundan əlavə, İngilis, İspan və Fransız dillərində ünsiyyət qura bilirəm.',
+    'cv-download': 'CV yüklə',
+    'contact-title': 'Əlaqə',
+    'footer-text': 'Hazırlayan: Zarifa Mammadova. All Rights Reserved'
+  },
+  en: {
+    'job-title': 'Data Analyst/Data Science Learner',
+    'nav-projects': 'My Projects',
+    'nav-about': 'About Me',
+    'nav-contact': 'Contact',
+    'main-greeting': 'Hello, Welcome🌟',
+    'main-description': 'I am Zarifa, a Data Analyst, and you can see my selected projects below.',
+    'skills-title': 'Special Skills',
+    'projects-title': 'Projects',
+    'project1-title': 'Medical Insurance Dashboard',
+    'project1-desc': 'A Power BI project that analyzes medical insurance costs by demographic and lifestyle factors.',
+    'project2-title': 'Delivery & Customer Insights Dashboard',
+    'project2-desc': 'A Power BI project that interactively analyzes restaurant orders, customer behavior, and driver performance.',
+    'project3-title': 'Human Resources Dashboard',
+    'project3-desc': 'A Tableau project that analyzes employees\' demographic information, performance, and salary distribution.',
+    'project4-title': 'E-Commerce Sales Dashboard',
+    'project4-desc': 'An interactive E-Commerce sales dashboard created with Power BI. Shows sales trends, customer behavior, product performance, and geographic distribution analysis.',
+    'full-version-link1': 'Full version',
+    'full-version-link2': 'Full version',
+    'full-version-link3': 'Full version',
+    'full-version-link4': 'Full version',
+    'education-title': 'Education',
+    'university-label': 'University:',
+    'university-name': 'Azerbaijan State University of Economics',
+    'major-label': 'Major:',
+    'major-name': 'Statistics',
+    'year-label': 'Year:',
+    'year-range': '2018 – 2022',
+    'about-title': 'About Me',
+    'about-description': 'I have a bachelor\'s degree in Statistics and I am currently developing my knowledge and skills in the field of Data Analytics. I can use Excel, SQL, Power BI and Tableau programs fluently. In addition, I can communicate in English, Spanish and French.',
+    'cv-download': 'Download CV',
+    'contact-title': 'Contact',
+    'footer-text': 'Made by: Zarifa Mammadova. All Rights Reserved'
+  }
+};
+
+// Current language (default is Azerbaijani)
+let currentLanguage = 'az';
+
+// Language switching function
+function switchLanguage(lang) {
+  currentLanguage = lang;
+  
+  // Update all translatable elements
+  for (const [key, value] of Object.entries(translations[lang])) {
+    const element = document.getElementById(key);
+    if (element) {
+      element.textContent = value;
+    }
+  }
+  
+  // Update active language button
+  document.querySelectorAll('.lang').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(`btn-${lang}`).classList.add('active');
+  
+  // Update HTML lang attribute
+  document.documentElement.lang = lang;
+}
+
+// Add event listeners to language buttons
+document.getElementById('btn-az').addEventListener('click', () => switchLanguage('az'));
+document.getElementById('btn-en').addEventListener('click', () => switchLanguage('en'));
+
+// Project screenshots animation
 document.querySelectorAll('.project-screenshots').forEach(container => {
   const topImg = container.querySelector('img:first-child');
   const bottomImg = container.querySelector('img:last-child');
+  
+  // Initial state
+  topImg.style.zIndex = '2';
+  bottomImg.style.zIndex = '1';
+  bottomImg.style.top = '30px';
+  bottomImg.style.opacity = '0.5';
 
-  container.addEventListener('mouseenter', () => {
-    bottomImg.style.top = '0';
-    bottomImg.style.opacity = '1';
-    bottomImg.style.zIndex = '3';
-    topImg.style.zIndex = '2';
-  });
+  let showTop = true;
 
-  container.addEventListener('mouseleave', () => {
-    bottomImg.style.top = '30px';
-    bottomImg.style.opacity = '0.5';
-    bottomImg.style.zIndex = '1';
-    topImg.style.zIndex = '2';
-  });
+  setInterval(() => {
+    if(showTop){
+      topImg.style.zIndex = '1';
+      bottomImg.style.zIndex = '2';
+      bottomImg.style.top = '0';
+      bottomImg.style.opacity = '1';
+
+      topImg.style.top = '30px';
+      topImg.style.opacity = '0.5';
+    } else {
+      topImg.style.zIndex = '2';
+      bottomImg.style.zIndex = '1';
+      topImg.style.top = '0';
+      topImg.style.opacity = '1';
+
+      bottomImg.style.top = '30px';
+      bottomImg.style.opacity = '0.5';
+    }
+    showTop = !showTop;
+  }, 2000); // changes every 2 seconds
 });
 </script>
+
 </body>
 </html>
