@@ -720,6 +720,102 @@
     .project-card:nth-child(2) { animation-delay: 0.1s; }
     .project-card:nth-child(3) { animation-delay: 0.2s; }
     .project-card:nth-child(4) { animation-delay: 0.3s; }
+
+    /* Certifications Section */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .certification-card {
+      background: var(--bg-card);
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      backdrop-filter: blur(20px);
+    }
+
+    .certification-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--accent-primary);
+    }
+
+    .certification-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--glass-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-primary);
+      flex-shrink: 0;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .certification-card:hover .certification-icon {
+      background: var(--accent-gradient);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .certification-content {
+      flex: 1;
+    }
+
+    .certification-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .certification-issuer {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .certification-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .certification-link {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      color: var(--accent-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .certification-link:hover {
+      color: var(--accent-secondary);
+      transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+      .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .certification-card {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -769,6 +865,7 @@
       <div class="mobile-nav-links">
         <a href="#projects" id="mobile-nav-projects">Layihələrim</a>
         <a href="#about" id="mobile-nav-about">Haqqımda</a>
+        <a href="#certifications" id="mobile-nav-certifications">Sertifikatlar</a>
         <a href="#contact" id="mobile-nav-contact">Əlaqə</a>
       </div>
       <div class="controls">
@@ -951,6 +1048,73 @@
         </a>
       </section>
 
+      <!-- Certifications & Licenses Section -->
+      <section id="certifications" class="content-section">
+        <h2 id="certifications-title">Sertifikatlar və Lisenziyalar</h2>
+        <p class="section-subtitle" id="certifications-subtitle">Peşəkar inkişaf və bacarıqların təsdiqi</p>
+        
+        <div class="certifications-grid">
+          <article class="certification-card">
+            <div class="certification-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+              </svg>
+            </div>
+            <div class="certification-content">
+              <h3 class="certification-name" id="cert1-name">Google Data Analytics Professional Certificate</h3>
+              <p class="certification-issuer" id="cert1-issuer">Google / Coursera</p>
+              <p class="certification-date" id="cert1-date">2025</p>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/VEECHFJOY2HW" target="_blank" class="certification-link" id="cert1-link">Sertifikata bax →</a>
+            </div>
+          </article>
+
+          <article class="certification-card">
+            <div class="certification-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 2.5a.5.5 0 0 0-1 0V5H6a.5.5 0 0 0 0 1h1.5v1.5a.5.5 0 0 0 1 0V6H10a.5.5 0 0 0 0-1H8.5V3.5zM3 11.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 0-1h-9a.5.5 0 0 0-.5.5zm0-4a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 0-1h-9a.5.5 0 0 0-.5.5zM3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+              </svg>
+            </div>
+            <div class="certification-content">
+              <h3 class="certification-name" id="cert2-name">IBM Data Analytics Professional Certificate</h3>
+              <p class="certification-issuer" id="cert2-issuer">IBM / Coursera</p>
+              <p class="certification-date" id="cert2-date">2025</p>
+              <a href="https://www.coursera.org/account/accomplishments/specialization/M30IDE34B4RU" target="_blank" class="certification-link" id="cert2-link">Sertifikata bax →</a>
+            </div>
+          </article>
+
+          <article class="certification-card">
+            <div class="certification-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+              </svg>
+            </div>
+            <div class="certification-content">
+              <h3 class="certification-name" id="cert3-name">IELTS Academic</h3>
+              <p class="certification-issuer" id="cert3-issuer">British Council / IDP</p>
+              <p class="certification-date" id="cert3-date">2024</p>
+              <a href="https://www.linkedin.com/posts/zerife-memmedova_im-so-happy-with-my-ielts-score-thank-activity-7154100630133895168-AYnt?utm_source=share&utm_medium=member_desktop&rcm=ACoAADCVlCsBR6cqz6tO2JX_A1-liVLZKVX5rTw"target="_blank" class="certification-link" id="cert3-link">Sertifikata bax →</a>
+            </div>
+          </article>
+
+          <article class="certification-card">
+            <div class="certification-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                <path d="M10.854 4.146a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708l6-6a.5.5 0 0 1 .708 0z"/>
+              </svg>
+            </div>
+            <div class="certification-content">
+              <h3 class="certification-name" id="cert4-name">Duolingo English Test</h3>
+              <p class="certification-issuer" id="cert4-issuer">Duolingo</p>
+              <p class="certification-date" id="cert4-date">2024</p>
+              <a href="https://certs.duolingo.com/85cc3f422725546c9732285d40bacd38"target="_blank" class="certification-link" id="cert4-link">Sertifikata bax →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <!-- Contact Section -->
       <section id="contact" class="content-section">
         <h2 id="contact-title">Əlaqə</h2>
@@ -982,9 +1146,11 @@
         'job-title': 'Data Analyst/Data Science Learner',
         'nav-projects': 'Layihələrim',
         'nav-about': 'Haqqımda',
+        'nav-certifications': 'Sertifikatlar',
         'nav-contact': 'Əlaqə',
         'mobile-nav-projects': 'Layihələrim',
         'mobile-nav-about': 'Haqqımda',
+        'mobile-nav-certifications': 'Sertifikatlar',
         'mobile-nav-contact': 'Əlaqə',
         'main-greeting': 'Salam, Xoş Gəlmişsiniz 🌟',
         'main-description': 'Mən Zərifə Data Analitikəm və aşağıda seçilmiş layihələrimi görə bilərsiniz.',
@@ -1016,6 +1182,24 @@
         'about-title': 'Haqqımda',
         'about-description': 'Mən Statistikadan bakalavr dərəcəsinə sahibəm və hazırda Data Analitika sahəsində bilik və bacarıqlarımı inkişaf etdirirəm. Excel, SQL, Power BI və Tableau proqramlarından sərbəst istifadə edə bilirəm. Bundan əlavə, İngilis, İspan və Fransız dillərində ünsiyyət qura bilirəm.',
         'cv-download': 'CV Yüklə',
+        'certifications-title': 'Sertifikatlar və Lisenziyalar',
+        'certifications-subtitle': 'Peşəkar inkişaf və bacarıqların təsdiqi',
+        'cert1-name': 'Google Data Analytics Professional Certificate',
+        'cert1-issuer': 'Google / Coursera',
+        'cert1-date': '2025',
+        'cert1-link': 'Sertifikata bax →',
+        'cert2-name': 'IBM Data Analytics Professional Certificate',
+        'cert2-issuer': 'IBM / Coursera',
+        'cert2-date': '2025',
+        'cert2-link': 'Sertifikata bax →',
+        'cert3-name': 'IELTS Academic',
+        'cert3-issuer': 'British Council / IDP',
+        'cert3-date': '2024',
+        'cert3-link': 'Sertifikata bax →',
+        'cert4-name': 'Duolingo English Test',
+        'cert4-issuer': 'Duolingo',
+        'cert4-date': '2024',
+        'cert4-link': 'Sertifikata bax →',
         'contact-title': 'Əlaqə',
         'contact-description': 'Layihələr və əməkdaşlıq imkanları barədə danışmaq üçün mənimlə əlaqə saxlayın.',
         'footer-text': 'Hazırlayan: Zarifa Mammadova. All Rights Reserved'
@@ -1024,9 +1208,11 @@
         'job-title': 'Data Analyst/Data Science Learner',
         'nav-projects': 'My Projects',
         'nav-about': 'About Me',
+        'nav-certifications': 'Certifications',
         'nav-contact': 'Contact',
         'mobile-nav-projects': 'My Projects',
         'mobile-nav-about': 'About Me',
+        'mobile-nav-certifications': 'Certifications',
         'mobile-nav-contact': 'Contact',
         'main-greeting': 'Hello, Welcome 🌟',
         'main-description': 'I am Zarifa, a Data Analyst, and you can see my selected projects below.',
@@ -1058,6 +1244,24 @@
         'about-title': 'About Me',
         'about-description': 'I have a bachelor\'s degree in Statistics and I am currently developing my knowledge and skills in the field of Data Analytics. I can use Excel, SQL, Power BI and Tableau programs fluently. In addition, I can communicate in English, Spanish and French.',
         'cv-download': 'Download Resume',
+        'certifications-title': 'Certifications & Licenses',
+        'certifications-subtitle': 'Professional development and skill validation',
+        'cert1-name': 'Google Data Analytics Professional Certificate',
+        'cert1-issuer': 'Google / Coursera',
+        'cert1-date': '2025',
+        'cert1-link': 'View Certificate →',
+        'cert2-name': 'IBM Data Analytics Professional Certificate',
+        'cert2-issuer': 'IBM / Coursera',
+        'cert2-date': '2025',
+        'cert2-link': 'View Certificate →',
+        'cert3-name': 'IELTS Academic',
+        'cert3-issuer': 'British Council / IDP',
+        'cert3-date': '2024',
+        'cert3-link': 'View Certificate →',
+        'cert4-name': 'Duolingo English Test',
+        'cert4-issuer': 'Duolingo',
+        'cert4-date': '2024',
+        'cert4-link': 'View Certificate →',
         'contact-title': 'Contact',
         'contact-description': 'Get in touch to discuss projects and collaboration opportunities.',
         'footer-text': 'Made by: Zarifa Mammadova. All Rights Reserved'
